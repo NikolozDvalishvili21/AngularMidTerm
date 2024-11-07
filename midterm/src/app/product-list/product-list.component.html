@@ -1,0 +1,9 @@
+<div class="main-cont">
+  <div *ngFor="let product of products" class="product-card">
+    <h3>{{ product.name }}</h3>
+    <p>Price: ${{ product.price }}</p>
+    <p *ngIf="product.discount" style="color: red">Discount: {{ product.discount }}%</p>
+    <p *ngIf="product.isNew" class="new" style="color: white">New!</p> 
+    <button (click)="addToCart(product)">Add to Cart</button>
+  </div>
+</div>
