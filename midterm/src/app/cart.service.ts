@@ -21,8 +21,6 @@ export class CartService {
     } else {
       this.cart.push({ product, quantity: 1, isNew: true });
     }
-
-    this.getTotalPrice();
   }
 
   updateQuantity(productId: number, quantity: number) {
@@ -36,8 +34,6 @@ export class CartService {
 
   removeFromCart(productId: number) {
     this.cart = this.cart.filter((item) => item.product.id !== productId);
-
-    this.getTotalPrice();
   }
 
   getCartItems(): CartItem[] {
@@ -51,7 +47,7 @@ export class CartService {
       return total + price * item.quantity;
     }, 0);
 
-    console.log('Total Price:', totalPrice);
+    // console.log('Total Price:', totalPrice);
     return totalPrice;
   }
 

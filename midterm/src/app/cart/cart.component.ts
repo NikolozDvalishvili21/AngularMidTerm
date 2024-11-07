@@ -46,7 +46,7 @@ export class CartComponent implements OnInit {
     this.updateCart();  
   }
 
-  get totalPrice(): number {
+  gettotalPrice(): number {
     return this.cartService.getTotalPrice();
   }
 }
