@@ -20,7 +20,6 @@ export class CartService {
       item.isNew = false;
     } else {
       this.cart.push({ product, quantity: 1, isNew: true });
-      setTimeout(() => this.resetNewStatus(product.id), 3000);
     }
 
     this.getTotalPrice();
@@ -62,12 +61,5 @@ export class CartService {
 
   isCartEmpty(): boolean {
     return this.cart.length === 0;
-  }
-
-  private resetNewStatus(productId: number) {
-    const item = this.cart.find((item) => item.product.id === productId);
-    if (item) {
-      item.isNew = false;
-    }
   }
 }
